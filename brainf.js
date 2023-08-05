@@ -1,7 +1,7 @@
 //can expand memory
 const MEMORY_SIZE = 30000;
 //array of size MEMORY_SIZE
-const memory = new Array(MEMORY_SIZE);
+const memory = new Array(MEMORY_SIZE).fill(0);
 //Instruction pointer -- points to the current instruction
 let inspointer = 0;
 //memory pointer -- points to the current cell in memory
@@ -80,17 +80,16 @@ function interpret(){
                 break;
 
             case '[':
-                if(memory[mempointer]) { //if it is nonzero
+                if (memory[mempointer]) { // If non-zero
                     addstack.push(inspointer);
-                }
-                else{ //skip to corresponding right bracket
+                } else { // Skip to matching right bracket
                     let count = 0;
-                    while(true){
+                    while (true) {
                         inspointer++;
-                        if(!bfprogram[inspointer]) break;
-                        if(bfprogram[inspointer] === '[') count++;
-                        else if(bfprogram[inspointer] === ']'){
-                            if(count) count--;
+                        if (!bfprogram[inspointer]) break;                           
+                        if (bfprogram[inspointer] === "[") count++;
+                        else if (bfprogram[inspointer] === "]") {
+                            if (count) count--;
                             else break;
                         }
                     }

@@ -48,26 +48,64 @@ function interpret(){
 
     while(!theEnd){
         switch (bfprogram[inspointer]){
+
             case '>':
+                //if we run out of memory we can expand the array
+                if (mempointer == memory.length - 1){
+                    memory.push(0,0,0,0,0);
+                }
+                mempointer++;
                 break;
+
             case '<':
+                if (mempointer > 0){
+                    mempointer--;
+                }
                 break;
+
             case '+':
+                memory[mempointer]++;
                 break;
+
             case '-':
+                memory[mempointer]--;
                 break;
+
             case '.':
+                sendOutput(memory[mempointer]);
                 break;
+
             case ',':
+                memory[mempointer] = getInput();
                 break;
+
             case '[':
+                if(memory[mempointer]) { //if it is nonzero
+                    addstack.push(inspointer);
+                }
+                else{ //skip to corresponding right bracket
+                    let count = 0;
+                    while(true){
+                        inspointer++;
+                        if(!bfprogram[inspointer]) break;
+                        if(bfprogram[inspointer] === '[') count++;
+                        else if(bfprogram[inspointer] === ']'){
+                            if(count) count--;
+                            else break;
+                        }
+                    }
+                }
                 break;
+
             case ']':
+                inspointer = addstack.pop() - 1;
                 break;
+
             case undefined:
                 //program is complete
                 theEnd = true;
                 break;
+
             default:
                 //ignores characters not part of the bf syntax
                 break;
@@ -75,4 +113,7 @@ function interpret(){
         //move to the next instruction
         inspointer++;
     }
+
+    console.log(output);
+    return output;
 }

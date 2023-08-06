@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css">
+    </link>
     <title>Brainf*** Interpreter</title>
 </head>
 <body>
+   
+    <div class="window" style="width:40rem;">
+        <div class="title-bar"> 
+            <h1 class="title">Brainf**k Interpreter</h1>
+        </div>
+        <div class="separator"></div>
+        
+        <div class="window-pane">
+            Welcome to my Brainf**k interpreter! I wrote this in javascript and used system.css for the macOS inspired styling.
+        </div>
+    </div>
+
+    <div class="window" style="width:40rem;height:30rem;">
+
+        <div class="title-bar"> 
+            <h1 class="title">Interpreter:</h1>
+        </div>
+
+        <div class="separator"></div>
+        
+            <div class="modeless-dialog" style="width:100%;height:100%;">
+               
+
+                <script type="text/javascript"
+                    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
+                </script>
+                <div class="new">
+                    <script type="text/javascript" > 
+                        myCodeMirror = CodeMirror(document.querySelector('div.modeless-dialog'), {
+                            lineNumbers: true,
+                            mode: "Brainfuck",
+                            tabSize: 2,
+                            value: '',
+                        });
+
+                        myCodeMirror.setSize("100%", "83%");
+                    </script>
+                </div>
+
+            </div>
+
+        </div>
+
     <script src="./brainf.js"></script>
+
 </body>
 </html>

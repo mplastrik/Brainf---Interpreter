@@ -74,23 +74,82 @@
                 <div class="separator"></div>
                 
                 <div class="window-pane">
-                    <input id="input" type="text" style="width:90%" placeholder="Enter the program's input here..."/>
+                    <textarea id="input" type="text" rows="4" style="width:90%;" placeholder="Enter the program's input here..."> </textarea>
                 </div>
                 
             </div>
 
-            <div class="window" style="min-height:50vh">
+            <div class="window" style="min-height:16.8vh">
                 <div class="title-bar"> 
                     <h1 class="title">Output</h1>
                 </div>
                 <div class="separator"></div>
                 <div class="window-pane">
-                    
+                    <p>""</p>
                 </div>
                 
             </div>
+
+            <div class="window">
+                <div class="title-bar">
+                  <button aria-label="Close" class="close"></button>
+                  <h1 class="title">Also a Title Bar</h1>
+                  <button aria-label="Resize" class="resize"></button>
+                </div>
+
+                <div class="separator"></div>
+
+                <div class="window-pane" style="max-height: 25vh;">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Command:</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr>
+                                <td><</td>
+                                <td>Decrement the pointer</td>
+                            </tr>
+                            <tr>
+                                <td>></td>
+                                <td>Increment the pointer</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>Decrement the byte at the pointer</td>
+                            </tr>
+                            <tr>
+                                <td>+</td>
+                                <td>Increment the byte at the pointer</td>
+                            </tr>
+                            <tr>
+                                <td>.</td>
+                                <td>Output the byte at the pointer</td>
+                            </tr>
+                            <tr>
+                                <td>,</td>
+                                <td>Input a byte and store it in the byte at the pointer</td>
+                            </tr>
+                            <tr>
+                                <td>[</td>
+                                <td>Jump forward past the corresponding ] if the byte at the pointer is zero</td>
+                            </tr>
+                            <tr>
+                                <td>]</td>
+                                <td>Jump backward to the corresponding [ unless the byte at the pointer is zero</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                <a class="links" href="https://github.com/mplastrik/Brainf---Interpreter" target="_blank">Github</a>
+                
             
-             <a class="links">Github</a>
+            </div>
 
         </div>
 

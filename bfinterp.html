@@ -11,50 +11,91 @@
     <title>Brainf*** Interpreter</title>
 </head>
 <body>
-   
-    <div class="window" style="width:50rem;">
-        <div class="title-bar"> 
-            <h1 class="title">Brainf**k Interpreter</h1>
-        </div>
-        <div class="separator"></div>
-        
-        <div class="window-pane">
-            Welcome to my Brainf**k interpreter! I wrote this in javascript and used system.css for the macOS inspired styling.
-        </div>
-    </div>
 
-    <div class="window" style="width:50rem;height:35rem;">
-
-        <div class="title-bar"> 
-            <h1 class="title">Interpreter:</h1>
-        </div>
-
-        <div class="separator"></div>
-        
-            <div class="modeless-dialog" style="width:100%;height:100%;">
-               
-
-                <script type="text/javascript"
-                    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
-                </script>
-                <div class="new">
-                    <script type="text/javascript" > 
-                        myCodeMirror = CodeMirror(document.querySelector('div.modeless-dialog'), {
-                            lineNumbers: true,
-                            mode: "Brainfuck",
-                            tabSize: 2,
-                            value: '',
-                        });
-
-                        myCodeMirror.setSize("100%", "83%");
-                    </script>
+    <section class="container">
+        <div id="col-1" style="height:100%">
+            <div class="window">
+                <div class="title-bar"> 
+                    <h1 class="title">Brainf**k Interpreter</h1>
                 </div>
-
+                <div class="separator"></div>
+                
+                <div class="window-pane">
+                    Welcome to my Brainf**k interpreter! I wrote this in javascript and used system.css for the macOS inspired styling.
+                </div>
             </div>
 
+            <div class="window" style="height:75vh;">
+
+                <div class="title-bar"> 
+                    <h1 class="title">Interpreter:</h1>
+                </div>
+
+                <div class="separator"></div>
+                
+                    <div class="modeless-dialog">
+                    
+
+                        <script type="text/javascript"
+                            src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
+                        </script>
+                        <div class="code">
+                            <script type="text/javascript" > 
+                                myCodeMirror = CodeMirror(document.querySelector('div.modeless-dialog'), {
+                                    lineNumbers: true,
+                                    mode: "Brainfuck",
+                                    tabSize: 2,
+                                    value: '',
+                                });
+
+                                myCodeMirror.setSize("100%", "83%");
+                            </script>
+                        </div>
+                        <div class="button-container">
+                            <button class="btn" id="clear-button">Clear</button>
+                            <button class="btn" id="run-button">Run</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+
+            <script src="./brainf.js"></script>
+            
         </div>
 
-    <script src="./brainf.js"></script>
 
+        <div id="col-2">
+
+            <div class="window" style="min-height:16.8vh">
+                <div class="title-bar"> 
+                    <h1 class="title">Input</h1>
+                </div>
+                <div class="separator"></div>
+                
+                <div class="window-pane">
+                    <input id="input" type="text" style="width:90%" placeholder="Enter the program's input here..."/>
+                </div>
+                
+            </div>
+
+            <div class="window" style="min-height:50vh">
+                <div class="title-bar"> 
+                    <h1 class="title">Output</h1>
+                </div>
+                <div class="separator"></div>
+                <div class="window-pane">
+                    
+                </div>
+                
+            </div>
+            
+             <a class="links">Github</a>
+
+        </div>
+
+
+
+    </section>
 </body>
 </html>

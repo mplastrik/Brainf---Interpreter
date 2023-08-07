@@ -48,6 +48,40 @@
     /* Component Tokens */
     --disabled: var(--sys-color-darkgrey);
   }
+
+
+  html,
+  body {
+	  height: 100%;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+#input{
+  width: 99%;
+  resize: none;
+  border: none;
+}
+
+.container {
+	height: 100%;
+  min-height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+  
+
+
+  #col-1 {
+    flex: 1;
+  }
+  
+  #col-2 {
+    flex: 1;
+  }
   
   @font-face {
     font-family: Chicago;
@@ -71,6 +105,8 @@
     src: url("fonts/FindersKeepers.woff") format("woff");
     src: url("fonts/FindersKeepers.woff2") format("woff2");
   }
+
+  /*
   ::-webkit-scrollbar {
     width: 22px;
     background-color: var(--primary);
@@ -139,7 +175,8 @@
     height: 23.38px;
     background-image: svg-load("./icon/scrollbar-right-active.svg");
   }
-  
+  */
+
   body {
     background: linear-gradient(90deg, var(--primary) 21px, transparent 1%) center, linear-gradient(var(--primary) 21px, transparent 1%) center, var(--secondary);
     background-size: 22px 22px;
@@ -155,12 +192,6 @@
     border-top: 0.15em solid var(--secondary);
   }
   
-  /*.container {
-    width: 50%;
-    margin: 0 auto;
-    display: block;
-  }
-  */
   h1,
   .heading {
     font-family: Chicago;
@@ -171,7 +202,7 @@
     font-family: Chicago;
     font-size: 2em;
   }
-  
+
   /* buttons */
   .standard-button {
     display: block;
@@ -196,12 +227,18 @@
   .modal-contents, .alert-contents {
     padding: 10px;
   }
-  
+  .links{
+    margin: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: .5;
+  }
   .modeless-dialog {
     height: 100%;
     padding: 1.5rem 0.5rem 0.5rem 0.5rem;
     font-size: 18px;
     letter-spacing: -0.025em;
+
   }
   
   .inner-border {
@@ -333,6 +370,7 @@
     letter-spacing: -0.025em;
     /*margin-bottom: 1rem;*/
   }
+  /*
   .window-pane::-webkit-scrollbar {
     width: 22px;
     background-color: var(--primary);
@@ -352,7 +390,7 @@
     border: 2px solid var(--secondary);
     border-right: none;
   }
-  
+  */
   .separator {
     flex: none;
     display: flex;

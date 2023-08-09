@@ -5,7 +5,7 @@
 
  :root {
     --box-shadow: 2px 2px;
-  
+    
     /* Spacing */
     --element-spacing: 8px;
     --grouped-element-spacing: 6px;
@@ -52,8 +52,14 @@
 
   html,
   body {
+    
 	  height: 100%;
   }
+
+  .invert-colors {
+    background-color: white;
+    filter: invert(100%);
+}
 
 #systemcss{
   font-family: "Inconsolata", Menlo, Chicago, Geneva;

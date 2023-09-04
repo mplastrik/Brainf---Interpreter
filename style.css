@@ -4,6 +4,7 @@
  */
 
  :root {
+  
     --box-shadow: 2px 2px;
     
     /* Spacing */
@@ -50,9 +51,11 @@
   }
 
 
+
+  
   html,
   body {
-    
+    overflow: hidden;
 	  height: 100%;
   }
 
@@ -75,11 +78,34 @@
     display: flex;
     justify-content: space-between;
   }
+
+p:empty:not(:focus)::before{
+  content: attr(data-placeholder);
+} 
+
+#links{
   
+  height: 100%;
+  padding: 1rem 2rem;
+  font-size: 18px;
+  letter-spacing: -0.025em;
+}
+
 #input{
-  width: 99%;
+  
   resize: none;
-  border: none;
+  background-color: var(--primary);
+  color: var(--secondary);
+  border:none;
+  font-family: "Inconsolata", Menlo, Chicago, Geneva;
+  
+ 
+ 
+  outline: 0;
+  outline-color: transparent;
+  outline-style: none;
+
+  
 }
 
 table {

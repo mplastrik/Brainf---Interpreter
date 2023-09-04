@@ -13,6 +13,14 @@ let bfprogram = "";
 let input = "";
 let output = "";
 
+function clearCode(){
+    myCodeMirror.setValue("");
+    myCodeMirror.clearHistory();
+    console.log(document.getElementById("input").value);
+    document.getElementById("input").value = "";
+    document.getElementById("output").value = "";
+}
+
 function resetState() {
     //clears memory and resets the pointers
     inspointer = 0;

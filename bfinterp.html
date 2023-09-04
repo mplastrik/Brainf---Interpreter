@@ -43,18 +43,19 @@
                         <script type="text/javascript"
                             src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
                         </script>
-                        <div class="code">
-                            <script type="text/javascript" > 
-                                myCodeMirror = CodeMirror(document.querySelector('div.modeless-dialog'), {
-                                    lineNumbers: true,
-                                    mode: "Brainfuck",
-                                    tabSize: 2,
-                                    value: '',
-                                });
+                        
+                            <textarea class="thecode">   </textarea>
+                                <script type="text/javascript" > 
+                                    myCodeMirror = CodeMirror.fromTextArea(document.querySelector('textarea.thecode'), {
+                                        lineNumbers: true,
+                                        mode: "Brainfuck",
+                                        tabSize: 2,
+                                        value: '',
+                                    });
 
-                                myCodeMirror.setSize("100%", "83%");
-                            </script>
-                        </div>
+                                    myCodeMirror.setSize("100%", "83%");
+                                </script>
+                         
                         <div class="button-container">
                             <button class="btn" id="clear-button">Clear</button>
                             <button class="btn" id="run-button">Run</button>

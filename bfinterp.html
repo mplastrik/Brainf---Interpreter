@@ -11,7 +11,8 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css">
     </link>
     <title>Brainf*** Interpreter</title>
-    <script src="./brainf.js"></script>
+    
+    <script src="./bf.js"></script>
 </head>
 
 <body>
@@ -58,7 +59,7 @@
                          
                         <div class="button-container">
                             <button class="btn" id="clear-button" onClick="javascript:clearCode()">Clear</button>
-                            <button class="btn" id="run-button" >Run</button>
+                            <button class="btn" id="run-button" onClick="javascript:runCode()">Run</button>
                         </div>
                     </div>
                     
@@ -90,7 +91,7 @@
                 </div>
                 <div class="separator"></div>
                 <div class="window-pane">
-                    <p>""</p>
+                    <p id="output"></p>
                 </div>
                 
             </div>

@@ -1,17 +1,17 @@
-//can expand memory
-const MEMORY_SIZE = 30000;
-//array of size MEMORY_SIZE
-const memory = new Array(MEMORY_SIZE).fill(0);
-//Instruction pointer -- points to the current instruction
-let inspointer = 0;
-//memory pointer -- points to the current cell in memory
-let mempointer = 0;
-//address stack used to track index of left brackets
-let addstack = [];
+ //can expand memory
+ const MEMORY_SIZE = 30000;
+ //array of size MEMORY_SIZE
+ const memory = new Array(MEMORY_SIZE).fill(0);
+ //Instruction pointer -- points to the current instruction
+ let inspointer = 0;
+ //memory pointer -- points to the current cell in memory
+ let mempointer = 0;
+ //address stack used to track index of left brackets
+ let addstack = [];
 
-let bfprogram = "";
-let input = "";
-let output = "";
+ let bfprogram = "";
+ let input = "";
+ let output = "";
 
 function clearCode(){
     myCodeMirror.setValue("");
@@ -121,6 +121,12 @@ function interpret(){
         inspointer++;
     }
 
-    console.log(output);
     return output;
+}
+
+function runCode(){
+    bfprogram = myCodeMirror.getValue();
+    input = document.getElementById("input").value;
+    interpret();
+    document.getElementById("output").innerHTML = output;
 }
